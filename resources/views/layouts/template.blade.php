@@ -74,7 +74,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block"></a>
+                        <a href="#" class="d-block">Eka Mas Tunggal</a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
@@ -101,8 +101,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('pelanggan.index')}}" class="nav-link {{ ($title==='Peminjam')?'active':''}}">
-                                <i class="nav-icon fas fa-users"></i>
+                            <a href="{{route('warga.index')}}" class="nav-link {{($title==='Warga')?'active':''}}">
+                                <i class="nav-icon fas fa-boxes"></i>
                                 <p>
                                    Warga
                                 </p>

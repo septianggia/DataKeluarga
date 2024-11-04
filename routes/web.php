@@ -14,4 +14,4 @@ Route::get('/', function () {
 });
 
 Route::resource('pengguna',UserController::class)->except('destroy','create','show','update','edit')->middleware('auth');
-Route::resource('warga',WargaController::class)->middleware('auth');
+Route::resource('warga',WargaController::class);
