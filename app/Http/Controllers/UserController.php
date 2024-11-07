@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         return view('user.index',[
-            "title" => "Data Peminjam",
+            "title" => "Data Warga",
             "data" => User::all()
         ]);
     }

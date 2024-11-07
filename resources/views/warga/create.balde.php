@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('judulh1','Admin - Barang')
+@section('judulh1','Admin - Warga')
 
 @section('konten')
 <div class="col-md-6">
@@ -20,7 +20,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('warga.store') }}" method="POST">
+        <form action="{{ route('warga.index') }}" method="POST">
             @csrf
 
             <div class=" card-body">

@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('judulh1','Admin - Barang')
+@section('judulh1','Admin - Warga')
 
 
 @section('konten')
@@ -17,7 +17,7 @@
 
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Data Barang</h3>
+            <h3 class="card-title">Data Warga</h3>
         </div>
         <!-- /.card-header -->
 
