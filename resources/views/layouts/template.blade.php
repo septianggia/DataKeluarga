@@ -108,7 +108,14 @@
                                 </p>
                             </a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a href="{{route('penerima.index')}}" class="nav-link {{($title==='Penerima')?'active':''}}">
+                                <i class="nav-icon fas fa-boxes"></i>
+                                <p>
+                                   Penerima
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

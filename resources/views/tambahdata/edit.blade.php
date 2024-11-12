@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('judulh1','Admin - Warga')
+@section('judulh1','Admin - TambahData')
 
 @section('konten')
 <div class="col-md-6">
@@ -19,41 +19,98 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('warga.update',$warga->id) }}" method="POST">
+        <form action="{{ route('tambahdata.update',$tambahdata->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class=" card-body">
             <div class="form-group">
-                    <label for="nama_kepala_keluarga">Nama Kepala Keluarga</label>
-                    <input type="text" class="form-control" id="nama_kepala_keluarga" name="nama_kepala_keluarga" value="{{$warga->nama_kepala_keluarga}}">
-                </div>
-            <div class="form-group">
-                    <label for="no_kk">No KK</label>
-                    <input type="number" class="form-control" id="no_kk" name="no_kk" value="{{$warga->no_kk}}">
+            <label for="nama_lengkap">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <input type="text" class="form-control" id="alamat" name="alamat" value="{{$warga->alamat}}">
+                    <label for="nik">NIK</label>
+                    <input type="number" class="form-control" id="nik" name="nik">
                 </div>
                 <div class="form-group">
-                    <label for="kode_pos">Kode Pos</label>
-                    <input type="text" class="form-control" id="kode_pos" name="kode_pos" value="{{$warga->kode_pos}}">
+    <label for="jenis_kelamin">Jenis Kelamin</label>
+    <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+    </select>
+</div>
+                <div class="form-group">
+                    <label for="tempat_lahir">Tempat Lahir</label>
+                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir">
                 </div>
                 <div class="form-group">
-                    <label for="desa">Desa</label>
-                    <input type="text" class="form-control" id="desa" name="desa" value="{{$warga->desa}}">
+                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                    <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
                 </div>
                 <div class="form-group">
-                    <label for="kecamatan">Kecamatan</label>
-                    <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{$warga->kecamatan}}">
+    <label for="agama">Agama</label>
+    <select class="form-control" id="agama" name="agama">
+        <option value="Islam">Islam</option>
+        <option value="Kristen">Kristen</option>
+        <option value="Katolik">Katolik</option>
+        <option value="Hindu">Hindu</option>
+        <option value="Buddha">Buddha</option>
+        <option value="Konghucu">Konghucu</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="pendidikan">Pendidikan</label>
+    <select class="form-control" id="pendidikan" name="pendidikan">
+        <option value="SLTA/SEDERAJAT">SLTA/SEDERAJAT</option>
+        <option value="TAMAT/SD/SEDERAJAT">TAMAT SD/SEDERAJAT</option>
+        <option value="TIDAK/BELUMSEKOLAH">TIDAK/BELUM SEKOLAH</option>
+    </select>
+</div>
+                <div class="form-group">
+                    <label for="jenis_pekerjaan">Jenis Pekerjaan</label>
+                    <input type="text" class="form-control" id="jenis_pekerjaan" name="jenis_pekerjaan">
                 </div>
                 <div class="form-group">
-                    <label for="kabupaten">Kabupaten</label>
-                    <input type="text" class="form-control" id="kabupaten" name="kabupaten" value="{{$warga->kabupaten}}">
+                    <label for="golongan_darah">Golongan Darah</label>
+                    <input type="text" class="form-control" id="golongan_darah" name="golongan_darah">
                 </div>
                 <div class="form-group">
-                    <label for="provinsi">Provinsi</label>
-                    <input type="text" class="form-control" id="provinsi" name="provinsi" value="{{$warga->provinsi}}">
+    <label for="status_perkawinan">Status Perkawinan</label>
+    <select class="form-control" id="status_perkawinan" name="status_perkawinan">
+        <option value="Belum Menikah">Belum Menikah</option>
+        <option value="Menikah">Menikah</option>
+        <option value="Cerai Hidup">Cerai Hidup</option>
+        <option value="Cerai Mati">Cerai Mati</option>
+    </select>
+</div>
+                <div class="form-group">
+                    <label for="tanggal_perkawinan">Tanggal Perkawinan</label>
+                    <input type="text" class="form-control" id="tanggal_perkawinan" name="tanggal_perkawinan">
+                </div>
+                <div class="form-group">
+    <label for="status_hubungan_dalam_keluarga">Status Hubungan Dalam Keluarga</label>
+    <select class="form-control" id="status_hubungan_dalam_keluarga" name="status_hubungan_dalam_keluarga">
+        <option value="Kepala Keluarga">Kepala Keluarga</option>
+        <option value="Suami">Suami</option>
+        <option value="Istri">Istri</option>
+        <option value="Anak">Anak</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="kewarganegaraan">Kewarganegaraan</label>
+    <select class="form-control" id="kewarganegaraan" name="kewarganegaraan">
+        <option value="WNI">WNI</option>
+        <option value="WNA">WNA</option>
+    </select>
+</div>
+                <div class="form-group">
+                    <label for="ayah">Ayah</label>
+                    <input type="text" class="form-control" id="ayah" name="ayah">
+                </div>
+                <div class="form-group">
+                    <label for="ibu">Ibu</label>
+                    <input type="text" class="form-control" id="ibu" name="ibu">
                 </div>
             </div>
             <!-- /.card-body -->

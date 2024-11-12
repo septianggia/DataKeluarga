@@ -7,14 +7,14 @@
 <!-- Toastr -->
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 @endsection
-@section('judulh1','Admin - TambahData')
+@section('judulh1','Admin - Penerima')
 @section('konten')
 <div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
-            <h2 class="card-title">Data Warga</h2>
-            <a type="button" class="btn btn-success float-right" href="{{ route('tambahdata.create') }}">
-                <i class=" fas fa-plus"></i> Tambah Warga
+            <h2 class="card-title">Data Penerima</h2>
+            <a type="button" class="btn btn-success float-right" href="{{ route('penerima.create') }}">
+                <i class=" fas fa-plus"></i> Tambah Penerima
             </a>
         </div>
         <!-- /.card-header -->
@@ -23,21 +23,9 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Lengakap</th>
-                        <th>NIK</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Tempat Lahir</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Agama</th> 
-                        <th>Pendidikan</th>
-                        <th>Jenis Pekerjaan</th>
-                        <th>Golongan Darah</th>
-                        <th>Status Perkawinan</th>
-                        <th>Tanggal Perkawinan</th>
-                        <th>Status Hubungan Dalam Keluarga</th>
-                        <th>Kewarganegaraan</th>
-                        <th>Ayah</th>
-                        <th>Ibu</th>
+                        <th>Nama Penerima</th>
+                        <th>No KK</th>
+                        <th>Jenis Bantuan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -48,33 +36,24 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $dt->nama_lengkap }}</td>
-                        <td>{{ $dt->nik }}</td>
-                        <td>{{ $dt->jenis_kelamin }}</td>
-                        <td>{{ $dt->tempat_lahir }}</td>
-                        <td>{{ $dt->tanggal_lahir }}</td>
-                        <td>{{ $dt->agama }}</td>
-                        <td>{{ $dt->pendidikan }}</td>
-                        <td>{{ $dt->jenis_pekerjaan }}</td>
-                        <td>{{ $dt->golongan_darah }}</td>
-                        <td>{{ $dt->status_perkawinan }}</td>
-                        <td>{{ $dt->tanggal_perkawinan }}</td>
-                        <td>{{ $dt->status_hubungan_dalam_keluarga }}</td>
-                        <td>{{ $dt->kewarganegaraan }}</td>
-                        <td>{{ $dt->ayah }}</td>
-                        <td>{{ $dt->ibu }}</td>
+                        <td>{{ $dt->no_kk }}</td>
+                        <td>{{ $dt->jenis_bantuan }}</td>
 
                         <td>
                             <div class="btn-group">
-                                <form action="{{ route('tambahdata.destroy',$dt->id)}}" method="POST">
+                                <form action="{{ route('penerima.destroy',$dt->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">
                                         <i class=" fas fa-trash"></i>
                                     </button>
                                 </form>
-                                <a type="button" class="btn btn-warning" href="{{ route('tambahdata.edit',$dt->id) }}">
+                                <a type="button" class="btn btn-warning" href="{{ route('penerima.edit',$dt->id) }}">
                                     <i class=" fas fa-edit"></i>
-</a>
+                                </a>
+                                <a type="button" class="btn btn-success" href="{{ route('penerima.show',$dt->id) }}">
+                                    <i class=" fas fa-eye"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>

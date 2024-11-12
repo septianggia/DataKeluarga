@@ -31,10 +31,19 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void
-    {
-        
-
-        Schema::dropIfExists('wargas');
-
-    }
+        {
+            Schema::table('wargas', function(Blueprint $table) {
+                $table->dropForeign('wargas_tambahdata_id_foreign');
+            });
+            Schema::table('wargas', function(Blueprint $table) {
+                $table->dropIndex('wargas_tambahdata_id_foreign');
+            });
+            Schema::table('wargas', function(Blueprint $table) {
+                $table->dropForeign('wargas_tambahdata_id_foreign');
+            });
+            Schema::table('wargas', function(Blueprint $table) {
+                $table->dropIndex('wargas_tambahdata_id_foreign');
+            });
+            Schema::dropIfExists('wargas');
+        }
 };
