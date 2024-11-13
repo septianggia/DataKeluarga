@@ -106,10 +106,14 @@
 <script>
 $(function() {
     $("#example1").DataTable({
-        "responsive": true,
+        "paging":true,
+        "responsive": false,
         "lengthChange": true,
         "autoWidth": false,
-        "responsive": true,
+       "scrollX":true,
+       "fixedColumns": {
+        leftColumns:2
+       },
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 });
 @if($message = Session::get('success'))

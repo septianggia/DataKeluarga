@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('agama');   
             $table->string('pendidikan');   
             $table->string('jenis_pekerjaan');   
-            $table->string('golongan_darah');  
+            $table->string('golongan_darah')->nullable();  
             $table->string('status_perkawinan');  
-            $table->string('tanggal_perkawinan');  
+            $table->string('tanggal_perkawinan')->nullable();  
             $table->string('status_hubungan_dalam_keluarga');
             $table->string('kewarganegaraan');  
             $table->string('ayah');  

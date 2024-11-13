@@ -4,7 +4,6 @@ use App\Http\Controllers\PenerimaController;
 use App\Http\Controllers\TambahDataController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WargaController;
-use App\Models\TambahData;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

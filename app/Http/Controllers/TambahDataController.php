@@ -47,14 +47,16 @@ class TambahDataController extends Controller
 
     return redirect()->route('tambahdata.index')->with('success', 'Data Warga Berhasil Ditambahkan');
     }
-    public function edit(TambahData $tambahData):View
+    public function edit($id):View
     {
+        $tambahdata=TambahData::findOrFail($id);
+        // dd($tambahdata->id);
         return view('tambahdata.edit',compact('tambahdata'))->with([
             "title" => "Ubah Data Warga",
-            "data" => TambahData::all()
+            "data" => $tambahdata
         ]);
     }
-    public function update(TambahData $tambahData, Request $request):RedirectResponse
+    public function update(TambahData $tambahdata, Request $request):RedirectResponse
     {
         $request->validate([
             "nama_lengkap"=>"required",
@@ -73,7 +75,7 @@ class TambahDataController extends Controller
             "ayah"=>"required",
             "ibu"=>"required"
         ]);
-        $warga->update($request->all());
+        $tambahdata->update($request->all());
         return redirect()->route('tambahdata.index')->with('updated','Data Warga Berhasil Diubah');
     }
     public function destroy($id):RedirectResponse

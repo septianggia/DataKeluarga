@@ -19,13 +19,14 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('tambahdata.update',$tambahdata->id) }}" method="POST">
+   
+        <form action="{{ route('tambahdata.update',$data->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class=" card-body">
             <div class="form-group">
             <label for="nama_lengkap">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="">
+                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="{{$data->nama_lengkap}}">
                 </div>
                 <div class="form-group">
                     <label for="nik">NIK</label>
