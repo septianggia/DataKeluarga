@@ -103,6 +103,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @endsection
 @section('tambahScript')
+<script src="{{asset('plugins/datables-fixedcolumns/js/dataTables.fixedColumns.js')}}"></script>
+<script src="{{asset('plugins/datables-fixedcolumns/js/fixedColumns.bootstrap4.js')}}"></script>
 <script>
 $(function() {
     $("#example1").DataTable({

@@ -35,6 +35,7 @@
                 <div class="form-group">
     <label for="jenis_kelamin">Jenis Kelamin</label>
     <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+    <option value="pilih_jenis_kelamin">Pilih Jenis Kelamin</option>
         <option value="Laki-laki">Laki-laki</option>
         <option value="Perempuan">Perempuan</option>
     </select>
@@ -50,6 +51,7 @@
                 <div class="form-group">
     <label for="agama">Agama</label>
     <select class="form-control" id="agama" name="agama">
+    <option value="pilih_agama">Pilih Agama</option>
         <option value="Islam">Islam</option>
         <option value="Kristen">Kristen</option>
         <option value="Katolik">Katolik</option>
@@ -62,6 +64,7 @@
 <div class="form-group">
     <label for="pendidikan">Pendidikan</label>
     <select class="form-control" id="pendidikan" name="pendidikan">
+    <option value="pilih_pendidikan">Pilih Pendidikan</option>
         <option value="SLTA/SEDERAJAT">SLTA/SEDERAJAT</option>
         <option value="TAMAT/SD/SEDERAJAT">TAMAT SD/SEDERAJAT</option>
         <option value="TIDAK/BELUMSEKOLAH">TIDAK/BELUM SEKOLAH</option>
@@ -78,6 +81,7 @@
                 <div class="form-group">
     <label for="status_perkawinan">Status Perkawinan</label>
     <select class="form-control" id="status_perkawinan" name="status_perkawinan">
+    <option value="pilih_status_kawin">Pilih Status Perkawinan</option>
         <option value="Belum Menikah">Belum Menikah</option>
         <option value="Menikah">Menikah</option>
         <option value="Cerai Hidup">Cerai Hidup</option>
@@ -91,8 +95,8 @@
                 <div class="form-group">
     <label for="status_hubungan_dalam_keluarga">Status Hubungan Dalam Keluarga</label>
     <select class="form-control" id="status_hubungan_dalam_keluarga" name="status_hubungan_dalam_keluarga">
+    <option value="hubungan dalam keluarga">Pilih Status Hubungan Dalam Keluarga</option>
         <option value="Kepala Keluarga">Kepala Keluarga</option>
-        <option value="Suami">Suami</option>
         <option value="Istri">Istri</option>
         <option value="Anak">Anak</option>
     </select>
@@ -101,6 +105,7 @@
 <div class="form-group">
     <label for="kewarganegaraan">Kewarganegaraan</label>
     <select class="form-control" id="kewarganegaraan" name="kewarganegaraan">
+    <option value="pilih kewarganegaraan">Pilih Kewarganegaraan</option>
         <option value="WNI">WNI</option>
         <option value="WNA">WNA</option>
     </select>

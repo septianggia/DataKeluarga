@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="nik">NIK</label>
-                    <input type="number" class="form-control" id="nik" name="nik">
+                    <input type="number" class="form-control" id="nik" name="nik" value="{{$data->nik}}">
                 </div>
                 <div class="form-group">
     <label for="jenis_kelamin">Jenis Kelamin</label>
@@ -41,11 +41,11 @@
 </div>
                 <div class="form-group">
                     <label for="tempat_lahir">Tempat Lahir</label>
-                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir">
+                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{$data->tempat_lahir}}">
                 </div>
                 <div class="form-group">
                     <label for="tanggal_lahir">Tanggal Lahir</label>
-                    <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
+                    <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="{{$data->tanggal_lahir}}">
                 </div>
                 <div class="form-group">
     <label for="agama">Agama</label>
@@ -58,7 +58,6 @@
         <option value="Konghucu">Konghucu</option>
     </select>
 </div>
-
 <div class="form-group">
     <label for="pendidikan">Pendidikan</label>
     <select class="form-control" id="pendidikan" name="pendidikan">
@@ -69,7 +68,7 @@
 </div>
                 <div class="form-group">
                     <label for="jenis_pekerjaan">Jenis Pekerjaan</label>
-                    <input type="text" class="form-control" id="jenis_pekerjaan" name="jenis_pekerjaan">
+                    <input type="text" class="form-control" id="jenis_pekerjaan" name="jenis_pekerjaan" value="{{$data->jenis_pekerjaan}}">
                 </div>
                 <div class="form-group">
                     <label for="golongan_darah">Golongan Darah</label>
@@ -107,11 +106,11 @@
 </div>
                 <div class="form-group">
                     <label for="ayah">Ayah</label>
-                    <input type="text" class="form-control" id="ayah" name="ayah">
+                    <input type="text" class="form-control" id="ayah" name="ayah" value="{{$data->ayah}}">
                 </div>
                 <div class="form-group">
                     <label for="ibu">Ibu</label>
-                    <input type="text" class="form-control" id="ibu" name="ibu">
+                    <input type="text" class="form-control" id="ibu" name="ibu" value="{{$data->ibu}}">
                 </div>
             </div>
             <!-- /.card-body -->
