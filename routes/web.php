@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PenerimaController;
+use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\TambahDataController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WargaController;
@@ -18,5 +18,5 @@ Route::get('/', function () {
 Route::resource('pengguna',UserController::class);
 Route::resource('warga',WargaController::class);
 Route::resource('tambahdata',TambahDataController::class);
-Route::resource('penerima',PenerimaController::class);
+Route::resource('bantuan',BantuanController::class);
 

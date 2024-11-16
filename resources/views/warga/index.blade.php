@@ -64,6 +64,9 @@
                                 <a type="button" class="btn btn-success" href="{{ route('warga.show',$dt->id) }}">
                                     <i class=" fas fa-eye"></i>
                                 </a>
+                                <a type="button" class="btn btn-primary" href="{{ route('warga.bantuan', $dt->id) }}">
+                                  <i class="fas fa-bantuan"></i>
+                                  </a>
                             </div>
                         </td>
                     </tr>

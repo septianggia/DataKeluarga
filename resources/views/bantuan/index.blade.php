@@ -7,13 +7,13 @@
 <!-- Toastr -->
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 @endsection
-@section('judulh1','Admin - Penerima')
+@section('judulh1','Admin - Bantuan')
 @section('konten')
 <div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
-            <h2 class="card-title">Data Penerima</h2>
-            <a type="button" class="btn btn-success float-right" href="{{ route('penerima.create') }}">
+            <h2 class="card-title">Data Penerima Bantuan</h2>
+            <a type="button" class="btn btn-success float-right" href="{{ route('bantuan.create') }}">
                 <i class=" fas fa-plus"></i> Tambah Penerima
             </a>
         </div>
@@ -35,25 +35,22 @@
                     @foreach($data as $dt)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $dt->nama_lengkap }}</td>
+                        <td>{{ $dt->nama_penerima }}</td>
                         <td>{{ $dt->no_kk }}</td>
                         <td>{{ $dt->jenis_bantuan }}</td>
 
                         <td>
                             <div class="btn-group">
-                                <form action="{{ route('penerima.destroy',$dt->id)}}" method="POST">
+                                <form action="{{ route('bantuan.destroy',$dt->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">
                                         <i class=" fas fa-trash"></i>
                                     </button>
                                 </form>
-                                <a type="button" class="btn btn-warning" href="{{ route('penerima.edit',$dt->id) }}">
+                                <a type="button" class="btn btn-warning" href="{{ route('bantuan.edit',$dt->id) }}">
                                     <i class=" fas fa-edit"></i>
-                                </a>
-                                <a type="button" class="btn btn-success" href="{{ route('penerima.show',$dt->id) }}">
-                                    <i class=" fas fa-eye"></i>
-                                </a>
+</a>
                             </div>
                         </td>
                     </tr>
@@ -82,13 +79,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @endsection
 @section('tambahScript')
+<script src="{{asset('plugins/datables-fixedcolumns/js/dataTables.fixedColumns.js')}}"></script>
+<script src="{{asset('plugins/datables-fixedcolumns/js/fixedColumns.bootstrap4.js')}}"></script>
 <script>
 $(function() {
     $("#example1").DataTable({
-        "responsive": true,
+        "paging":true,
+        "responsive": false,
         "lengthChange": true,
         "autoWidth": false,
-        "responsive": true,
+       "scrollX":true,
+       "fixedColumns": {
+        leftColumns:2
+       },
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 });
 @if($message = Session::get('success'))

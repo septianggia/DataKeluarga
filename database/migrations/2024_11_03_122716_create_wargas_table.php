@@ -33,16 +33,16 @@ return new class extends Migration
     public function down(): void
         {
             Schema::table('wargas', function(Blueprint $table) {
-                $table->dropForeign('wargas_tambahdata_id_foreign');
+                $table->dropForeign('wargas_tambahdata_bantuan_id_foreign');
             });
             Schema::table('wargas', function(Blueprint $table) {
-                $table->dropIndex('wargas_tambahdata_id_foreign');
+                $table->dropIndex('wargas_tambahdata_bantuan_id_foreign');
             });
             Schema::table('wargas', function(Blueprint $table) {
-                $table->dropForeign('wargas_tambahdata_id_foreign');
+                $table->dropForeign('wargas_tambahdata_bantuan_id_foreign');
             });
             Schema::table('wargas', function(Blueprint $table) {
-                $table->dropIndex('wargas_tambahdata_id_foreign');
+                $table->dropIndex('wargas_tambahdata_bantuan_id_foreign');
             });
             Schema::dropIfExists('wargas');
         }
