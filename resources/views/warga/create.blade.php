@@ -20,7 +20,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('warga.index') }}" method="POST">
+        <form action="{{ route('warga.store') }}" method="POST">
             @csrf
 
             <div class=" card-body">

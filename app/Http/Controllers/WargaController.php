@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\TambahData;
 use App\Models\Warga;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -36,6 +38,7 @@ class WargaController extends Controller
             "kabupaten"=>"required",
             "provinsi"=>"required"
         ]);
+        
         Warga::create($request->all());
 
     return redirect()->route('warga.index')->with('success', 'Data Warga Berhasil Ditambahkan');
@@ -62,12 +65,15 @@ class WargaController extends Controller
         $warga->update($request->all());
         return redirect()->route('warga.index')->with('updated','Data Warga Berhasil Diubah');
     }
-    public function show():View
+    public function show($id):View
     {
-        $warga=Warga::all();
+        $anggota=TambahData::select('*')
+                            ->where('warga_id',$id)
+                            ->get();
+        
         return view('warga.show')->with([
             "title" => "Tampil Data Warga",
-            "data" =>$warga
+            "data" =>$anggota
         ]);
     }
     public function destroy($id):RedirectResponse

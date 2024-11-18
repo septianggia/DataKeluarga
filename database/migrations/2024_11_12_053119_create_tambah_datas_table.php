@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('tambah_datas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('warga_id');
             $table->string('nama_lengkap');
            $table->string('nik');
            $table->string('jenis_kelamin');
@@ -27,10 +28,13 @@ return new class extends Migration
             $table->string('status_hubungan_dalam_keluarga');
             $table->string('kewarganegaraan');  
             $table->string('ayah');  
-            $table->string('ibu');    
-
+            $table->string('ibu');   
             $table->timestamps();
            
+        });
+
+        Schema::table('tambah_datas',function(Blueprint $table){
+            $table->foreign('warga_id')->references('id')->on('users')->onDelete('cascade');
         });
        
     }

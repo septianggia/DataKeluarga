@@ -23,27 +23,14 @@ return new class extends Migration
             $table->string('provinsi');   
 
             $table->timestamps();
-           
-        });
-       
+            });
     }
     /**
      * Reverse the migrations.
      */
     public function down(): void
         {
-            Schema::table('wargas', function(Blueprint $table) {
-                $table->dropForeign('wargas_tambahdata_bantuan_id_foreign');
-            });
-            Schema::table('wargas', function(Blueprint $table) {
-                $table->dropIndex('wargas_tambahdata_bantuan_id_foreign');
-            });
-            Schema::table('wargas', function(Blueprint $table) {
-                $table->dropForeign('wargas_tambahdata_bantuan_id_foreign');
-            });
-            Schema::table('wargas', function(Blueprint $table) {
-                $table->dropIndex('wargas_tambahdata_bantuan_id_foreign');
-            });
+           
             Schema::dropIfExists('wargas');
         }
 };

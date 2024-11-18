@@ -18,5 +18,5 @@ Route::get('/', function () {
 Route::resource('pengguna',UserController::class);
 Route::resource('warga',WargaController::class);
 Route::resource('tambahdata',TambahDataController::class);
-Route::resource('bantuan',BantuanController::class);
+Route::resource('bantuan', BantuanController::class);
 

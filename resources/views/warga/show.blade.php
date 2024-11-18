@@ -72,6 +72,7 @@
                         </tr>
                     </thead>
                     <tbody>
+        
                         @foreach($data as $dt)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
