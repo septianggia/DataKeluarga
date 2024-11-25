@@ -73,7 +73,9 @@ class WargaController extends Controller
         
         return view('warga.show')->with([
             "title" => "Tampil Data Warga",
-            "data" =>$anggota
+            "data" =>$anggota,
+            "id" =>$id
+
         ]);
     }
     public function destroy($id):RedirectResponse

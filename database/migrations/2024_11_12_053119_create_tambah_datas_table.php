@@ -34,7 +34,7 @@ return new class extends Migration
         });
 
         Schema::table('tambah_datas',function(Blueprint $table){
-            $table->foreign('warga_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('warga_id')->references('id')->on('wargas')->onDelete('cascade');
         });
        
     }

@@ -24,6 +24,7 @@
             @csrf
             @method('PUT')
             <div class=" card-body">
+                <input type="hidden" name="warga_id" id="warga_id" value="{{$data->warga_id}}">
             <div class="form-group">
             <label for="nama_lengkap">Nama Lengkap</label>
                     <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="{{$data->nama_lengkap}}">

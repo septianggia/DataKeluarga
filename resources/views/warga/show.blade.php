@@ -44,7 +44,7 @@
     <div class="card card-info">
         <div class="card-header">
             <h2 class="card-title">Data Kartu Keluarga</h2>
-            <a class="btn btn-success float-right" href="{{ route('tambahdata.create') }}">
+            <a class="btn btn-success float-right" href="{{ route('tambahdata.create', $id) }}">
                 <i class="fas fa-plus"></i> Tambah Anggota Keluarga
             </a>
         </div>
@@ -69,6 +69,7 @@
                             <th>Kewarganegaraan</th>
                             <th>Ayah</th>
                             <th>Ibu</th>
+                            <th>aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,6 +92,21 @@
                             <td>{{ $dt->kewarganegaraan }}</td>
                             <td>{{ $dt->ayah }}</td>
                             <td>{{ $dt->ibu }}</td>
+                            <td>
+                            <div class="btn-group">
+                                <form action="{{ route('tambahdata.destroy',$dt->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" name="warga_id" id="warga_id" value="{{$id}}">
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class=" fas fa-trash"></i>
+                                    </button>
+                                </form>
+                                <a type="button" class="btn btn-warning" href="{{ route('tambahdata.edit',$dt->id) }}">
+                                    <i class=" fas fa-edit"></i>
+</a>
+                            </div>
+                        </td>
                         </tr>
                         @endforeach
                     </tbody>

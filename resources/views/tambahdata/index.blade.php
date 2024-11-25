@@ -68,6 +68,7 @@
                                 <form action="{{ route('tambahdata.destroy',$dt->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
+                                    
                                     <button type="submit" class="btn btn-danger">
                                         <i class=" fas fa-trash"></i>
                                     </button>

@@ -20,9 +20,9 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('tambahdata.index') }}" method="POST">
+        <form action="{{ route('tambahdata.store') }}" method="POST">
             @csrf
-
+            <input type="hidden" name="warga_id" id="warga_id" value="{{$warga_id}}">
             <div class=" card-body">
                 <div class="form-group">
                     <label for="nama_lengkap">Nama Lengkap</label>

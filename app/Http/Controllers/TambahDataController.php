@@ -18,10 +18,11 @@ class TambahDataController extends Controller
                 "data"=>$tambahdata
             ]);
         }
-    public function create():View
+    public function create($id):View
     {
         return view('tambahdata.create')->with([
-            "title" => "Tambah Data Warga"
+            "title" => "Tambah Data Warga",
+            "warga_id" =>$id
         ]);
     }
     public function store(Request $request):RedirectResponse
@@ -41,24 +42,26 @@ class TambahDataController extends Controller
             "status_hubungan_dalam_keluarga"=>"required",
             "kewarganegaraan"=>"required",
             "ayah"=>"required",
-            "ibu"=>"required"
+            "ibu"=>"required",
+            "warga_id"=>"required"
         ]);
         TambahData::create($request->all());
 
-    return redirect()->route('tambahdata.index')->with('success', 'Data Warga Berhasil Ditambahkan');
+    return redirect()->route('warga.show',$request->warga_id)->with('success', 'Data Warga Berhasil Ditambahkan');
     }
     public function edit($id):View
     {
         $tambahdata=TambahData::findOrFail($id);
-        // dd($tambahdata->id);
+    
         return view('tambahdata.edit',compact('tambahdata'))->with([
             "title" => "Ubah Data Warga",
             "data" => $tambahdata
         ]);
     }
-    public function update(TambahData $tambahdata, Request $request):RedirectResponse
+    public function update($id,Request $request):RedirectResponse
     {
-        $request->validate([
+        // dd($id);
+        $data=$request->validate([
             "nama_lengkap"=>"required",
             "nik"=>"required",
             "jenis_kelamin"=>"required",
@@ -75,12 +78,13 @@ class TambahDataController extends Controller
             "ayah"=>"required",
             "ibu"=>"required"
         ]);
-        $tambahdata->update($request->all());
-        return redirect()->route('tambahdata.index')->with('updated','Data Warga Berhasil Diubah');
+        TambahData::where('id',$id)->update($data);
+        return redirect()->route('warga.show',$request->warga_id)->with('updated','Data Warga Berhasil Diubah');
     }
-    public function destroy($id):RedirectResponse
-    {
+    public function destroy($id, Request $request):RedirectResponse
+    {   
+
         TambahData::where('id',$id)->delete();
-        return redirect()->route('tambahdata.index')->with('delete','Data Warga Berhasil Dihapus');
+        return redirect()->route('warga.show',$request->warga_id)->with('success', 'Data Warga Berhasil Dihapus');
     }
 }
