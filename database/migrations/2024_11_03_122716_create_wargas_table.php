@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('nama_kepala_keluarga');
            $table->string('no_kk');
            $table->string('alamat');
-            $table->string('kode_pos');
+       
             $table->string('desa');   
             $table->string('kecamatan');   
             $table->string('kabupaten');   
-            $table->string('provinsi');   
+          
 
             $table->timestamps();
             });

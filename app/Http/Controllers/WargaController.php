@@ -32,11 +32,10 @@ class WargaController extends Controller
             "nama_kepala_keluarga"=>"required",
             "no_kk"=>"required",
             "alamat"=>"required",
-            "kode_pos"=>"required",
             "desa"=>"required",
             "kecamatan"=>"required",
-            "kabupaten"=>"required",
-            "provinsi"=>"required"
+            "kabupaten"=>"required"
+          
         ]);
         
         Warga::create($request->all());
@@ -56,11 +55,9 @@ class WargaController extends Controller
             "nama_kepala_keluarga"=>"required",
             "no_kk"=>"required",
             "alamat"=>"required",
-            "kode_pos"=>"required",
             "desa"=>"required",
             "kecamatan"=>"required",
-            "kabupaten"=>"required",
-            "provinsi"=>"required"
+            "kabupaten"=>"required"
         ]);
         $warga->update($request->all());
         return redirect()->route('warga.index')->with('updated','Data Warga Berhasil Diubah');
@@ -78,9 +75,25 @@ class WargaController extends Controller
 
         ]);
     }
+    
     public function destroy($id):RedirectResponse
     {
         Warga::where('id',$id)->delete();
         return redirect()->route('warga.index')->with('delete','Data Warga Berhasil Dihapus');
+    }
+
+    public function bantuan($id)
+    {
+
+        $dataWarga=Warga::select('id','no_kk','nama_kepala_keluarga')
+                ->where('id',$id)
+                ->get()
+                ->toArray();
+        
+        return view('warga.bantuan',[
+            "data"=>array(),
+            "dataWarga"=>$dataWarga,
+            "title"=>''
+        ]);
     }
 }

@@ -26,12 +26,11 @@
                         <th>Nama Kepala Keluarga</th>
                         <th>No KK</th>
                         <th>Alamat</th>
-                        <th>Kode Pos</th>
                         <th>Desa</th>
                         <th>Kecamatan</th> 
                         <th>Kabupaten</th>
-                        <th>Provinsi</th>
                         <th>Aksi</th>
+                   
                     </tr>
                 </thead>
                 <tbody>
@@ -43,11 +42,9 @@
                         <td>{{ $dt->nama_kepala_keluarga }}</td>
                         <td>{{ $dt->no_kk }}</td>
                         <td>{{ $dt->alamat }}</td>
-                        <td>{{ $dt->kode_pos }}</td>
                         <td>{{ $dt->desa }}</td>
                         <td>{{ $dt->kecamatan }}</td>
                         <td>{{ $dt->provinsi }}</td>
-                        <td>{{ $dt->kabupaten }}</td>
 
                         <td>
                             <div class="btn-group">
@@ -63,6 +60,9 @@
                                 </a>
                                 <a type="button" class="btn btn-success" href="{{ route('warga.show',$dt->id) }}">
                                     <i class=" fas fa-eye"></i>
+                                </a>
+                                <a type="button" class="btn btn-secondary" href="{{ route('warga.bantuan',$dt->id) }}">
+                                <i class=" fas fa-eye"></i>
                                 </a>
                                 
                             </div>

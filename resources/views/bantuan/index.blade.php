@@ -23,8 +23,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Penerima</th>
-                        <th>No KK</th>
+                        <th>Tahun</th>
                         <th>Jenis Bantuan</th>
                         <th>Aksi</th>
                     </tr>
@@ -35,8 +34,7 @@
                     @foreach($data as $dt)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $dt->nama_penerima }}</td>
-                        <td>{{ $dt->no_kk }}</td>
+                        <td>{{ $dt->tahun }}</td>
                         <td>{{ $dt->jenis_bantuan }}</td>
 
                         <td>

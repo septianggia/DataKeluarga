@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::resource('pengguna',UserController::class);
 Route::resource('warga',WargaController::class);
+Route::get('wargabantuan/{id}',[WargaController::class,'bantuan'])->name('warga.bantuan');
 Route::resource('tambahdata',TambahDataController::class)->except(['create']);
 Route::get('/tambahdata/{id}/create',[TambahDataController::class,'create'])->name('tambahdata.create');
 

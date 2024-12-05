@@ -11,27 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bantuans', function (Blueprint $table) {
+        Schema::create('wargabantuans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('warga_id');
-            $table->string('nama_penerima');
-           $table->string('no_kk');
-           $table->string('jenis_bantuan');
-            $table->timestamps();
+            $table->unsignedBigInteger('bantuan_id');
            
+            $table->timestamps();
         });
 
-        Schema::table('bantuans',function(Blueprint $table){
+        Schema::table('wargabantuans',function(Blueprint $table){
             $table->foreign('warga_id')->references('id')->on('wargas')->onDelete('cascade');
+            $table->foreign('bantuan_id')->references('id')->on('bantuans')->onDelete('cascade');
         });
-       
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-
-        Schema::dropIfExists('bantuans');
+        Schema::dropIfExists('wargabantuans');
     }
 };

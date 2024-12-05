@@ -37,10 +37,6 @@
                     <input type="text" class="form-control" id="alamat" name="alamat">
                 </div>
                 <div class="form-group">
-                    <label for="kode_pos">Kode Pos</label>
-                    <input type="text" class="form-control" id="kode_pos" name="kode_pos">
-                </div>
-                <div class="form-group">
                     <label for="desa">Desa</label>
                     <input type="text" class="form-control" id="desa" name="desa">
                 </div>
@@ -51,10 +47,6 @@
                 <div class="form-group">
                     <label for="kabupaten">Kabupaten</label>
                     <input type="text" class="form-control" id="kabupaten" name="kabupaten">
-                </div>
-                <div class="form-group">
-                    <label for="provinsi">Provinsi</label>
-                    <input type="text" class="form-control" id="provinsi" name="provinsi">
                 </div>
             </div>
             <!-- /.card-body -->

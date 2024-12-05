@@ -41,6 +41,10 @@
 
 @section('konten')
 <div class="col-md-12">
+    No Kartu Keluarga: {{$dataWarga[0]['no_kk']}}
+    Nama KepalaKeluarga:{{$dataWarga[0]['nama_kepala_keluarga']}}
+</div>
+<div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
             <h2 class="card-title">Data Penerima Bantuan</h2>
@@ -48,14 +52,14 @@
                 <i class="fas fa-plus"></i> Tambah Penerima
             </a>
         </div>
+
         <div class="card-body">
             <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Penerima</th>
-                            <th>No KK</th>
+                            <th>Tahun</th>
                             <th>Jenis Bantuan</th>
                         </tr>
                     </thead>
@@ -63,8 +67,7 @@
                         @foreach($data as $dt)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $dt->nama_penerima }}</td>
-                            <td>{{ $dt->no_kk }}</td>
+                            <td>{{ $dt->tahun }}</td>
                             <td>{{ $dt->jenis_bantuan }}</td>
                         </tr>
                         @endforeach

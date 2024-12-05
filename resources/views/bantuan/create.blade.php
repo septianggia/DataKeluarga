@@ -25,13 +25,10 @@
 
             <div class=" card-body">
                 <div class="form-group">
-                    <label for="nama_penerima">Nama Penerima</label>
-                    <input type="text" class="form-control" id="nama_penerima" name="nama_penerima" placeholder="">
+                    <label for="tahun">Tahun</label>
+                    <input type="date" class="form-control" id="tahun" name="tahun" placeholder="">
                 </div>
-                <div class="form-group">
-                    <label for="no_kk">No KK</label>
-                    <input type="number" class="form-control" id="no_kk" name="no_kk">
-                </div>
+                
                 <div class="form-group">
                     <label for="jenis_bantuan">Jenis Bantuan</label>
                     <input type="text" class="form-control" id="jenis_bantuan" name="jenis_bantuan">

@@ -25,12 +25,8 @@
             @method('PUT')
             <div class=" card-body">
             <div class="form-group">
-            <label for="nama_penerima">Nama Penerima</label>
-                    <input type="text" class="form-control" id="nama_penerima" name="nama_penerima" value="{{$data->nama_penerima}}">
-                </div>
-                <div class="form-group">
-                    <label for="no_kk">No KK</label>
-                    <input type="number" class="form-control" id="no_kk" name="no_kk" value="{{$data->no_kk}}">
+            <label for="tahun">TTahun</label>
+                    <input type="date" class="form-control" id="tahun" name="tahun" value="{{$data->tahun}}">
                 </div>
                 <div class="form-group">
                     <label for="jenis_bantuan">Jenis Bantuan</label>
