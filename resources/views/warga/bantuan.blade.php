@@ -41,15 +41,37 @@
 
 @section('konten')
 <div class="col-md-12">
-    No Kartu Keluarga: {{$dataWarga[0]['no_kk']}}
-    Nama KepalaKeluarga:{{$dataWarga[0]['nama_kepala_keluarga']}}
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Informasi Kartu Keluarga</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <strong>No Kartu Keluarga:</strong>
+                </div>
+                <div class="col-md-8">
+                    {{$dataWarga[0]['no_kk']}}
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <strong>Nama Kepala Keluarga:</strong>
+                </div>
+                <div class="col-md-8">
+                    {{$dataWarga[0]['nama_kepala_keluarga']}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 <div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
             <h2 class="card-title">Data Penerima Bantuan</h2>
             <a class="btn btn-success float-right" href="{{ route('bantuan.create') }}">
-                <i class="fas fa-plus"></i> Tambah Penerima
+                <i class="fas fa-plus"></i> Tambah Bantuan
             </a>
         </div>
 

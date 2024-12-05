@@ -16,23 +16,50 @@
 
     <div class="card card-success">
         <div class="card-header">
-            <h3 class="card-title">Tambah Data Penerima</h3>
+            <h3 class="card-title">Tambah Data Bantuan</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form action="{{ route('bantuan.index') }}" method="POST">
+        <form action="{{ route('bantuan.store') }}" method="POST">
             @csrf
 
             <div class=" card-body">
+            <div class="form-group">
+    <label for="tahun">Tahun</label>
+    <select class="form-control" id="tahun" name="tahun">
+        <!-- Daftar tahun dari 2020 hingga 2030, bisa disesuaikan sesuai kebutuhan -->
+        <option value="">Pilih Tahun</option>
+        @for ($i = 2020; $i <= 2030; $i++)
+            <option value="{{ $i }}">{{ $i }}</option>
+        @endfor
+    </select>
+</div>
+
                 <div class="form-group">
-                    <label for="tahun">Tahun</label>
-                    <input type="date" class="form-control" id="tahun" name="tahun" placeholder="">
-                </div>
-                
-                <div class="form-group">
-                    <label for="jenis_bantuan">Jenis Bantuan</label>
-                    <input type="text" class="form-control" id="jenis_bantuan" name="jenis_bantuan">
-                </div>
+    <label for="jenis_bantuan">Jenis Bantuan</label>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" id="pkh" name="jenis_bantuan" value="PKH" required>
+        <label class="form-check-label" for="pkh">Program Keluarga Harapan (PKH)</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" id="blt" name="jenis_bantuan" value="BLT">
+        <label class="form-check-label" for="blt">Bantuan Langsung Tunai (BLT)</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" id="bantuan_sembako" name="jenis_bantuan" value="Bantuan Sembako">
+        <label class="form-check-label" for="bantuan_sembako">Bantuan Sembako</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" id="bantuan_pendidikan" name="jenis_bantuan" value="Bantuan Pendidikan">
+        <label class="form-check-label" for="bantuan_pendidikan">Bantuan Pendidikan</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" id="bantuan_kesehatan" name="jenis_bantuan" value="Bantuan Kesehatan">
+        <label class="form-check-label" for="bantuan_kesehatan">Bantuan Kesehatan</label>
+    </div>
+</div>
+
+
 </div>
             </div>
             <!-- /.card-body -->

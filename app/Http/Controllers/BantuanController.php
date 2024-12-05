@@ -26,9 +26,9 @@ class BantuanController extends Controller
     }
     public function store(Request $request):RedirectResponse
     {
+        
         $request->validate([
-            "nama_penerima"=>"required",
-            "no_kk"=>"required",
+            "tahun"=>"required",
             "jenis_bantuan"=>"required"
         ]);
         Bantuan::create($request->all());
@@ -47,8 +47,7 @@ class BantuanController extends Controller
     public function update(Bantuan $bantuan, Request $request):RedirectResponse
     {
         $request->validate([
-            "nama_penerima"=>"required",
-            "no_k"=>"required",
+            "no_kk"=>"required",
             "jenis_bantuan"=>"required"
         ]);
         $bantuan->update($request->all());

@@ -13,17 +13,13 @@ return new class extends Migration
     {
         Schema::create('bantuans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('warga_id');
-            $table->string('nama_penerima');
-           $table->string('no_kk');
-           $table->string('jenis_bantuan');
+            $table->string('tahun',4);
+            $table->string('jenis_bantuan');
             $table->timestamps();
            
         });
 
-        Schema::table('bantuans',function(Blueprint $table){
-            $table->foreign('warga_id')->references('id')->on('wargas')->onDelete('cascade');
-        });
+       
        
     }
     /**

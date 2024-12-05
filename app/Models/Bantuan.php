@@ -10,6 +10,6 @@ class Bantuan extends Model
 {
     use HasFactory;
     protected $table='bantuans';
-    protected $fillable=['nama_penerima','no_kk','jenis_bantuan'];
+    protected $fillable=['no_kk','jenis_bantuan'];
 
 }
