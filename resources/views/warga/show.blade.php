@@ -104,7 +104,10 @@
                                 </form>
                                 <a type="button" class="btn btn-warning" href="{{ route('tambahdata.edit',$dt->id) }}">
                                     <i class=" fas fa-edit"></i>
-</a>
+                               </a>
+                                     <a type="button" class="btn btn-secondary" href="{{ route('tambahdata.show2',$dt->id) }}">
+                                      <i class=" fas fa-eye"></i>
+                                </a>
                             </div>
                         </td>
                         </tr>

@@ -75,7 +75,8 @@
                                 </form>
                                 <a type="button" class="btn btn-warning" href="{{ route('tambahdata.edit',$dt->id) }}">
                                     <i class=" fas fa-edit"></i>
-</a>
+                                      </a>
+                                      
                             </div>
                         </td>
                     </tr>

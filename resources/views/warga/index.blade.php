@@ -44,7 +44,7 @@
                         <td>{{ $dt->alamat }}</td>
                         <td>{{ $dt->desa }}</td>
                         <td>{{ $dt->kecamatan }}</td>
-                        <td>{{ $dt->provinsi }}</td>
+                        <td>{{ $dt->kabupaten }}</td>
 
                         <td>
                             <div class="btn-group">
@@ -56,13 +56,13 @@
                                     </button>
                                 </form>
                                 <a type="button" class="btn btn-warning" href="{{ route('warga.edit',$dt->id) }}">
-                                    <i class=" fas fa-edit"></i>
+                                  Edit
                                 </a>
                                 <a type="button" class="btn btn-success" href="{{ route('warga.show',$dt->id) }}">
-                                    <i class=" fas fa-eye"></i>
+                                   Detail 
                                 </a>
                                 <a type="button" class="btn btn-secondary" href="{{ route('warga.bantuan',$dt->id) }}">
-                                <i class=" fas fa-eye"></i>
+                                Bantuan
                                 </a>
                                 
                             </div>
