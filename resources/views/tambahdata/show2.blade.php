@@ -1,5 +1,23 @@
 @extends('layouts.template')
 @section('judulh1','Admin - Kartu Keluarga')
+@section('styles')
+<style>
+    @media print {
+        body {
+            visibility: hidden;
+        }
+        .card {
+            visibility: visible;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .btn {
+            display: none;
+        }
+    }
+</style>
+@endsection
 
 
 @section('konten')
@@ -96,6 +114,10 @@
             </table>
         </div>
         <!-- /.card-body -->
+        <div class="card-footer">
+    <a href="{{ url()->previous() }}" class="btn btn-secondary">Back</a>
+    <button onclick="window.print()" class="btn btn-primary">Cetak</button>
+</div>
 
 
     </div>
