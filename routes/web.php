@@ -20,7 +20,6 @@ Route::resource('warga',WargaController::class);
 Route::get('wargabantuan/{id}',[WargaController::class,'bantuan'])->name('warga.bantuan');
 Route::resource('tambahdata',TambahDataController::class)->except(['create']);
 Route::get('/tambahdata/{id}/create',[TambahDataController::class,'create'])->name('tambahdata.create');
-Route::resource('tambahdata',TambahDataController::class)->except(['show2']);
-Route::get('/tambahdata/{id}/show2',[TambahDataController::class,'show2'])->name('tambahdata.show2');
+
 Route::resource('bantuan', BantuanController::class);
 

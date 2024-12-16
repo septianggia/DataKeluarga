@@ -34,31 +34,29 @@
         @endfor
     </select>
 </div>
-
-                <div class="form-group">
+<div class="form-group">
     <label for="jenis_bantuan">Jenis Bantuan</label>
     <div class="form-check">
-        <input class="form-check-input" type="radio" id="pkh" name="jenis_bantuan" value="PKH" required>
+        <input class="form-check-input" type="checkbox" id="pkh" name="jenis_bantuan[]" value="PKH">
         <label class="form-check-label" for="pkh">Program Keluarga Harapan (PKH)</label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" id="blt" name="jenis_bantuan" value="BLT">
+        <input class="form-check-input" type="checkbox" id="blt" name="jenis_bantuan[]" value="BLT">
         <label class="form-check-label" for="blt">Bantuan Langsung Tunai (BLT)</label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" id="bantuan_sembako" name="jenis_bantuan" value="Bantuan Sembako">
+        <input class="form-check-input" type="checkbox" id="bantuan_sembako" name="jenis_bantuan[]" value="Bantuan Sembako">
         <label class="form-check-label" for="bantuan_sembako">Bantuan Sembako</label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" id="bantuan_pendidikan" name="jenis_bantuan" value="Bantuan Pendidikan">
+        <input class="form-check-input" type="checkbox" id="bantuan_pendidikan" name="jenis_bantuan[]" value="Bantuan Pendidikan">
         <label class="form-check-label" for="bantuan_pendidikan">Bantuan Pendidikan</label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" id="bantuan_kesehatan" name="jenis_bantuan" value="Bantuan Kesehatan">
+        <input class="form-check-input" type="checkbox" id="bantuan_kesehatan" name="jenis_bantuan[]" value="Bantuan Kesehatan">
         <label class="form-check-label" for="bantuan_kesehatan">Bantuan Kesehatan</label>
     </div>
 </div>
-
 
 </div>
             </div>

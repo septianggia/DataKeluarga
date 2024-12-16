@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bantuans', function (Blueprint $table) {
             $table->id();
             $table->string('tahun',4);
-            $table->string('jenis_bantuan');
+            $table->text('jenis_bantuan');
             $table->timestamps();
            
         });

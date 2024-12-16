@@ -82,14 +82,7 @@ class TambahDataController extends Controller
         return redirect()->route('warga.show',$request->warga_id)->with('updated','Data Warga Berhasil Diubah');
     }
 
-    public function show2():View
-    {
-    $tambahdata=TambahData::all();
-    return view('tambahdata.show2')->with([
-        "title"=> "Tampil Data Keluarga",
-        "data"=>$tambahdata
-    ]);
-    }
+    
 
     public function destroy($id, Request $request):RedirectResponse
     {   

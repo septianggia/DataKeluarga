@@ -105,9 +105,7 @@
                                 <a type="button" class="btn btn-warning" href="{{ route('tambahdata.edit',$dt->id) }}">
                                     <i class=" fas fa-edit"></i>
                                </a>
-                                     <a type="button" class="btn btn-secondary" href="{{ route('tambahdata.show2',$dt->id) }}">
-                                      <i class=" fas fa-eye"></i>
-                                </a>
+                                     
                             </div>
                         </td>
                         </tr>
@@ -139,6 +137,7 @@
 @endsection
 
 @section('tambahScript')
+
 <script>
 $(function() {
     $("#example1").DataTable({
@@ -147,8 +146,8 @@ $(function() {
         "lengthChange": true,
         "autoWidth": false, // Membiarkan kolom menyesuaikan lebar otomatis
         "columnDefs": [
-            { "width": "20%", "targets": 1 }, // Menyesuaikan lebar kolom Nama Lengkap
-            { "width": "15%", "targets": 2 }  // Menyesuaikan lebar kolom NIK
+            { "width": "5%", "targets": 0 },  // Kolom No
+            { "width": "5%", "targets": "_all" } // Semua kolom lainnya
         ]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 });
@@ -160,5 +159,6 @@ toastr.warning("{{ $message }}");
 @elseif($message = Session::get('deleted'))
 toastr.error("{{ $message }}");
 @endif
+
 </script>
 @endsection
