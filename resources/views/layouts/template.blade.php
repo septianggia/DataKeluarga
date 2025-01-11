@@ -108,6 +108,16 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('daftarbantuan.index') }}"
+                                class="nav-link {{ ($title==='daftarbantuan')?'active':'' }}">
+                                <i class="nav-icon fas fa-th-large"></i>
+                                <p>
+                                  Daftar Bantuan
+                                </p>
+                            </a>
+                        </li>
+                        
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

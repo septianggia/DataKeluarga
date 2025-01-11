@@ -40,13 +40,14 @@
 @section('judulh1', 'Admin - Data Kartu Keluarga')
 
 @section('konten')
-<div class="col-md-12">
+<div class="col-md-12"> 
     <div class="card card-info">
         <div class="card-header">
             <h2 class="card-title">Data Kartu Keluarga</h2>
             <a class="btn btn-success float-right" href="{{ route('tambahdata.create', $id) }}">
                 <i class="fas fa-plus"></i> Tambah Anggota Keluarga
             </a>
+            
         </div>
         <div class="card-body">
             <div class="table-responsive">

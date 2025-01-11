@@ -27,7 +27,7 @@ class TambahDataController extends Controller
     }
     public function store(Request $request):RedirectResponse
     {
-        $request->validate([
+        $request->validate([ 
             "nama_lengkap"=>"required",
             "nik"=>"required",
             "jenis_kelamin"=>"required",

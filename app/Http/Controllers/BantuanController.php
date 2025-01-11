@@ -26,12 +26,15 @@ class BantuanController extends Controller
     }
     public function store(Request $request):RedirectResponse
     {
-        
+        // dd($request);
         $request->validate([
             "tahun"=>"required",
             "jenis_bantuan"=>"required"
         ]);
-        Bantuan::create($request->all());
+        $data['tahun']=$request->tahun;
+        $data['jenis_bantuan']=$request->jenis_bantuan;
+        // dd($data);
+        Bantuan::create($data);
 
     return redirect()->route('bantuan.index')->with('success', 'Data Penerima Berhasil Ditambahkan');
     }

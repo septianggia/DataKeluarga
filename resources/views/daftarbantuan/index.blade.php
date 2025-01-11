@@ -1,4 +1,5 @@
-@extends('layouts.template')
+                </thead>
+                @extends('layouts.template')
 @section('tambahanCSS')
 <!-- DataTables -->
 <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -7,14 +8,17 @@
 <!-- Toastr -->
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 @endsection
-@section('judulh1','Admin - Warga')
+@section('judulh1','Admin - DaftarBantuan')
 @section('konten')
+
+
+
 <div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
-            <h2 class="card-title">Data Warga</h2>
-            <a type="button" class="btn btn-success float-right" href="{{ route('warga.create') }}">
-                <i class=" fas fa-plus"></i> Tambah Warga
+            <h2 class="card-title">Data Penerima Bantuan</h2>
+            <a type="button" class="btn btn-success float-right" href="{{ route('daftarbantuan.create') }}">
+                <i class=" fas fa-plus"></i> Tambah Bantuan
             </a>
         </div>
         <!-- /.card-header -->
@@ -23,14 +27,9 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Kepala Keluarga</th>
-                        <th>No KK</th>
-                        <th>Alamat</th>
-                        <th>Desa</th>
-                        <th>Kecamatan</th> 
-                        <th>Kabupaten</th>
+                        <th>Tahun</th>
+                        <th>Jenis Bantuan</th>
                         <th>Aksi</th>
-                   
                     </tr>
                 </thead>
                 <tbody>
@@ -39,32 +38,21 @@
                     @foreach($data as $dt)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $dt->nama_kepala_keluarga }}</td>
-                        <td>{{ $dt->no_kk }}</td>
-                        <td>{{ $dt->alamat }}</td>
-                        <td>{{ $dt->desa }}</td>
-                        <td>{{ $dt->kecamatan }}</td>
-                        <td>{{ $dt->kabupaten }}</td>
+                        <td>{{ $dt->tahun }}</td>
+                        <td>{{ $dt->jenis_bantuan }}</td>
 
                         <td>
                             <div class="btn-group">
-                                <form action="{{ route('warga.destroy',$dt->id)}}" method="POST">
+                            <form action="{{ route('daftarbantuan.destroy',$dt->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">
                                         <i class=" fas fa-trash"></i>
                                     </button>
                                 </form>
-                                <a type="button" class="btn btn-warning" href="{{ route('warga.edit',$dt->id) }}">
-                                  Edit
-                                </a>
-                                <a type="button" class="btn btn-success" href="{{ route('warga.show',$dt->id) }}">
-                                   Detail 
-                                </a>
-                                <a type="button" class="btn btn-secondary" href="{{ route('wargabantuan.list',$dt->id) }}">
-                                Bantuan
-                                </a>
-                                
+                                <a type="button" class="btn btn-warning" href="{{ route('daftarbantuan.edit',$dt->id) }}">
+                                    <i class=" fas fa-edit"></i>
+                                      </a>
                             </div>
                         </td>
                     </tr>

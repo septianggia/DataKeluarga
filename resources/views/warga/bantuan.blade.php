@@ -40,6 +40,7 @@
 @section('judulh1', 'Admin - Data Kartu Keluarga')
 
 @section('konten')
+
 <div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
@@ -51,7 +52,7 @@
                     <strong>No Kartu Keluarga:</strong>
                 </div>
                 <div class="col-md-8">
-                    {{$dataWarga[0]['no_kk']}}
+                    {{$dataWarga['no_kk']}}
                 </div>
             </div>
             <div class="row mt-3">
@@ -59,7 +60,7 @@
                     <strong>Nama Kepala Keluarga:</strong>
                 </div>
                 <div class="col-md-8">
-                    {{$dataWarga[0]['nama_kepala_keluarga']}}
+                    {{$dataWarga['nama_kepala_keluarga']}}
                 </div>
             </div>
         </div>
@@ -70,7 +71,7 @@
     <div class="card card-info">
         <div class="card-header">
             <h2 class="card-title">Data Penerima Bantuan</h2>
-            <a class="btn btn-success float-right" href="{{ route('bantuan.create') }}">
+            <a class="btn btn-success float-right" href="{{ route('wargabantuan.create',$warga_id) }}">
                 <i class="fas fa-plus"></i> Tambah Bantuan
             </a>
         </div>
@@ -86,11 +87,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($data as $dt)
+                        @foreach($data as $databantuan)
+                        
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $dt->tahun }}</td>
+                            @foreach($databantuan as $dt)
+                            <td>{{ $dt->tahun}}</td>
                             <td>{{ $dt->jenis_bantuan }}</td>
+                            @endforeach
                         </tr>
                         @endforeach
                     </tbody>
