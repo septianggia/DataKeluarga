@@ -84,10 +84,10 @@
                                 <td>
                                     <select class="form-control" id="pendidikan" name="pendidikan">
                                         <option value="">Pilih Pendidikan</option>
-                                        <option value="sd" {{ $data->pendidikan == 'sd' ? 'selected' : '' }}>SD/SEDERAJAT</option>
-                                        <option value="smp" {{ $data->pendidikan == 'smp' ? 'selected' : '' }}>SMP/SEDERAJAT</option>
-                                        <option value="sma" {{ $data->pendidikan == 'sma' ? 'selected' : '' }}>SMA/SEDERAJAT</option>
-                                        <option value="belum_sekolah" {{ $data->pendidikan == 'belum_sekolah' ? 'selected' : '' }}>Belum Sekolah</option>
+                                        <option value="SD/SEDERAJAT" {{ $data->pendidikan == 'SD/SEDERAJAT' ? 'selected' : '' }}>SD/SEDERAJAT</option>
+                                        <option value="SMP//SEERAJAT" {{ $data->pendidikan == 'SMP/SEDERAJAT' ? 'selected' : '' }}>SMP/SEDERAJAT</option>
+                                        <option value="SLTA/SEDERAJAT" {{ $data->pendidikan == 'SLTA/SEDERAJAT' ? 'selected' : '' }}>SLTA/SEDERAJAT</option>
+                                        <option value="Belum Sekolah" {{ $data->pendidikan == 'Belum Sekolah' ? 'selected' : '' }}>Belum Sekolah</option>
                                     </select>
                                 </td>
                             </tr>

@@ -1,53 +1,43 @@
 @extends('layouts.template')
+@section('judulh1', 'Admin - Data Kartu Keluarga')
 
 @section('tambahanCSS')
 <!-- DataTables -->
-<link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+<link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 <!-- Toastr -->
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <style>
     .table-responsive {
-        overflow-x: auto; /* Memungkinkan pengguliran horizontal */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
-    table#example1 {
+    .table {
         width: 100%;
-        table-layout: auto;
-        font-size: 18px; /* Memperbesar ukuran font tabel */
-        border-collapse: collapse;
+        margin-bottom: 1rem;
+        white-space: nowrap;
     }
-    table#example1 th, table#example1 td {
-        padding: 18px; /* Menambah padding agar teks lebih terbaca */
+    .table th, .table td {
+        padding: 0.75rem;
         vertical-align: middle;
-        border: 1px solid #ddd;
-        text-align: center;
+        border-top: 1px solid #dee2e6;
     }
-    table#example1 th {
-        background-color: #f4f4f4; /* Warna latar belakang header menjadi lebih netral */
-        color: #333; /* Warna teks lebih gelap untuk kontras */
-        font-weight: bold;
-    }
-    table#example1 tbody tr:nth-child(even) {
-        background-color: #fff; /* Warna latar belakang baris genap menjadi putih */
-    }
-    table#example1 tbody tr:nth-child(odd) {
-        background-color: #f9f9f9; /* Warna latar belakang baris ganjil menjadi sedikit abu-abu */
+    .btn-group {
+        white-space: nowrap;
     }
 </style>
 @endsection
 
-@section('judulh1', 'Admin - Data Kartu Keluarga')
-
 @section('konten')
-<div class="col-md-12"> 
+<div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
             <h2 class="card-title">Data Kartu Keluarga</h2>
-            <a class="btn btn-success float-right" href="{{ route('tambahdata.create', $id) }}">
-                <i class="fas fa-plus"></i> Tambah Anggota Keluarga
-            </a>
-            
+            <div class="float-right">
+                <a class="btn btn-success" href="{{ route('tambahdata.create', $id) }}">
+                    <i class="fas fa-plus"></i> Tambah Anggota Keluarga
+                </a>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -55,8 +45,8 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Lengkap</th>
                             <th>NIK</th>
+                            <th>Nama Lengkap</th>
                             <th>Jenis Kelamin</th>
                             <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
@@ -70,16 +60,15 @@
                             <th>Kewarganegaraan</th>
                             <th>Ayah</th>
                             <th>Ibu</th>
-                            <th>aksi</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-        
                         @foreach($data as $dt)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $dt->nama_lengkap }}</td>
                             <td>{{ $dt->nik }}</td>
+                            <td>{{ $dt->nama_lengkap }}</td>
                             <td>{{ $dt->jenis_kelamin }}</td>
                             <td>{{ $dt->tempat_lahir }}</td>
                             <td>{{ $dt->tanggal_lahir }}</td>
@@ -94,21 +83,20 @@
                             <td>{{ $dt->ayah }}</td>
                             <td>{{ $dt->ibu }}</td>
                             <td>
-                            <div class="btn-group">
-                                <form action="{{ route('tambahdata.destroy',$dt->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input type="hidden" name="warga_id" id="warga_id" value="{{$id}}">
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class=" fas fa-trash"></i>
-                                    </button>
-                                </form>
-                                <a type="button" class="btn btn-warning" href="{{ route('tambahdata.edit',$dt->id) }}">
-                                    <i class=" fas fa-edit"></i>
-                               </a>
-                                     
-                            </div>
-                        </td>
+                                <div class="btn-group">
+                                    <form action="{{ route('tambahdata.destroy',$dt->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="warga_id" id="warga_id" value="{{$id}}">
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                    <a type="button" class="btn btn-warning" href="{{ route('tambahdata.edit',$dt->id) }}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </div>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -121,36 +109,23 @@
 
 @section('tambahanJS')
 <!-- DataTables & Plugins -->
-<script src="plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="plugins/jszip/jszip.min.js"></script>
-<script src="plugins/pdfmake/pdfmake.min.js"></script>
-<script src="plugins/pdfmake/vfs_fonts.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <!-- Toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @endsection
 
 @section('tambahScript')
-
 <script>
 $(function() {
     $("#example1").DataTable({
-        "responsive": true,
-        "scrollX": true, // Mengaktifkan pengguliran horizontal
-        "lengthChange": true,
-        "autoWidth": false, // Membiarkan kolom menyesuaikan lebar otomatis
-        "columnDefs": [
-            { "width": "5%", "targets": 0 },  // Kolom No
-            { "width": "5%", "targets": "_all" } // Semua kolom lainnya
-        ]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        "responsive": false,
+        "scrollX": true,
+        "lengthChange": false,
+        "autoWidth": false
+    });
 });
 
 @if($message = Session::get('success'))
@@ -160,6 +135,5 @@ toastr.warning("{{ $message }}");
 @elseif($message = Session::get('deleted'))
 toastr.error("{{ $message }}");
 @endif
-
 </script>
 @endsection

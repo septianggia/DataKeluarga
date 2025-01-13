@@ -1,58 +1,76 @@
-                </thead>
                 @extends('layouts.template')
 @section('tambahanCSS')
 <!-- DataTables -->
-<link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+<link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 <!-- Toastr -->
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+<style>
+    .action-buttons {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+    .action-buttons .btn {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+    .action-buttons .btn i {
+        font-size: 14px;
+    }
+    .action-buttons .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+</style>
 @endsection
 @section('judulh1','Admin - DaftarBantuan')
 @section('konten')
 
-
-
 <div class="col-md-12">
     <div class="card card-info">
         <div class="card-header">
-            <h2 class="card-title">Data Penerima Bantuan</h2>
-            <a type="button" class="btn btn-success float-right" href="{{ route('daftarbantuan.create') }}">
-                <i class=" fas fa-plus"></i> Tambah Bantuan
+            <h2 class="card-title">Data Bantuan</h2>
+            <a class="btn btn-success float-right" href="{{ route('daftarbantuan.create') }}">
+                <i class="fas fa-plus"></i> Tambah Bantuan
             </a>
         </div>
-        <!-- /.card-header -->
         <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped ">
+            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th width="80px" class="text-center">No</th>
                         <th>Tahun</th>
                         <th>Jenis Bantuan</th>
-                        <th>Aksi</th>
+                        <th width="120px" class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-
-
                     @foreach($data as $dt)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td class="text-center">{{ $loop->iteration }}</td>
                         <td>{{ $dt->tahun }}</td>
                         <td>{{ $dt->jenis_bantuan }}</td>
-
                         <td>
-                            <div class="btn-group">
-                            <form action="{{ route('daftarbantuan.destroy',$dt->id)}}" method="POST">
+                            <div class="action-buttons">
+                                <form action="{{ route('daftarbantuan.destroy',$dt->id)}}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class=" fas fa-trash"></i>
+                                    <button type="submit" class="btn btn-danger" title="Hapus">
+                                        <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
-                                <a type="button" class="btn btn-warning" href="{{ route('daftarbantuan.edit',$dt->id) }}">
-                                    <i class=" fas fa-edit"></i>
-                                      </a>
+                                <a href="{{ route('daftarbantuan.edit',$dt->id) }}" class="btn btn-warning" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </a>
                             </div>
                         </td>
                     </tr>

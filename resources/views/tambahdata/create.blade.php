@@ -66,11 +66,10 @@
     <label for="pendidikan">Pendidikan</label>
     <select class="form-control" id="pendidikan" name="pendidikan">
         <option value="">Pilih Pendidikan</option>
-        <option value="sd">SD/SEDERAJAT</option>
-        <option value="smp">SMP/SEDERAJAT</option>
-        <option value="sma">SMA/SEDERAJAT</option>
-       
-        <option value="belum_sekolah">Belum Sekolah</option>
+        <option value="SD/SEDERAJAT">SD/SEDERAJAT</option>
+        <option value="SMP/SEDERAJAT">SMP/SEDERAJAT</option>
+        <option value="SLTA/SEDERAJAT">SLTA/SEDERAJAT</option>
+        <option value="Belum Sekolah">Belum Sekolah</option>
     </select>
 </div>
 

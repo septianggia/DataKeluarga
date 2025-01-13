@@ -64,15 +64,14 @@ class WargaController extends Controller
     }
     public function show($id):View
     {
-        $anggota=TambahData::select('*')
+        $anggota = TambahData::select('*')
                             ->where('warga_id',$id)
                             ->get();
         
         return view('warga.show')->with([
             "title" => "Tampil Data Warga",
-            "data" =>$anggota,
-            "id" =>$id
-
+            "data" => $anggota,
+            "id" => $id
         ]);
     }
     

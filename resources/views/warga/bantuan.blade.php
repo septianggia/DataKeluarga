@@ -37,7 +37,7 @@
 </style>
 @endsection
 
-@section('judulh1', 'Admin - Data Kartu Keluarga')
+@section('judulh1', 'Admin - Data Penerima Bantuan')
 
 @section('konten')
 
