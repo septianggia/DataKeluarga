@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WargaController;
 use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\TambahDataController;
@@ -16,15 +17,16 @@ Route::get('/', function () {
         "title"=>"Dashboard"
     ]);
 });
-
-Route::resource('pengguna',UserController::class);
+Route::resource('pengguna',UserController::class)->except('destroy','create','show','update','edit');
 Route::resource('warga',WargaController::class);
 Route::get('wargabantuan/{id}',[WargaBantuanController::class,'daftar'])->name('wargabantuan.list');
 Route::get('wargabantuantambah/{id}',[WargaBantuanController::class,'create'])->name('wargabantuan.create');
 Route::post('wargabantuan',[WargaBantuanController::class,'store'])->name('wargabantuan.store');
-
 Route::resource('tambahdata',TambahDataController::class)->except(['create']);
 Route::get('/tambahdata/{id}/create',[TambahDataController::class,'create'])->name('tambahdata.create');
 Route::resource('bantuan', BantuanController::class);
 Route::resource('daftarbantuan', DaftarBantuanController::class);
 // Route::get('/daftarbantuan/create',[DaftarBantuanController::class,'create'])->name('daftarbantuan.create');
+Route::get('login',[LoginController::class,'loginView'])->name('login');
+Route::post('login',[LoginController::class,'authenticate']);
+Route::post('logout',[LoginController::class,'logout'])                                     ;

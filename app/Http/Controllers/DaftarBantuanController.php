@@ -63,11 +63,7 @@ class DaftarBantuanController extends Controller
             $daftarbantuan->update($request->all());
             return redirect()->route('daftarbantuan.index')->with('updated','Data Penerima Berhasil Diubah');
         }
-        public function destroy($id):RedirectResponse
-        {
-            Bantuan::where('id',$id)->delete();
-            return redirect()->route('daftarbantuan.index')->with('delete','Data Penerima Berhasil Dihapus');
-        }
+        
     }
     
 

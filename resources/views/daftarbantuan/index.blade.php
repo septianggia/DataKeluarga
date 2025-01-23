@@ -61,13 +61,7 @@
                         <td>{{ $dt->jenis_bantuan }}</td>
                         <td>
                             <div class="action-buttons">
-                                <form action="{{ route('daftarbantuan.destroy',$dt->id)}}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" title="Hapus">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
+                               
                                 <a href="{{ route('daftarbantuan.edit',$dt->id) }}" class="btn btn-warning" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>

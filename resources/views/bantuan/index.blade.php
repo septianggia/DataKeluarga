@@ -39,13 +39,7 @@
 
                         <td>
                             <div class="btn-group">
-                                <form action="{{ route('bantuan.destroy',$dt->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class=" fas fa-trash"></i>
-                                    </button>
-                                </form>
+                               
                                 <a type="button" class="btn btn-warning" href="{{ route('bantuan.edit',$dt->id) }}">
                                     <i class=" fas fa-edit"></i>
 </a>

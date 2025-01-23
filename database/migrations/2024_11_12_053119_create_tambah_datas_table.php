@@ -30,7 +30,6 @@ return new class extends Migration
             $table->string('ayah');  
             $table->string('ibu');   
             $table->timestamps();
-           
         });
 
         Schema::table('tambah_datas',function(Blueprint $table){

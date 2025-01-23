@@ -74,6 +74,10 @@
             <a class="btn btn-success float-right" href="{{ route('wargabantuan.create',$warga_id) }}">
                 <i class="fas fa-plus"></i> Tambah Bantuan
             </a>
+            <!-- Tombol Cetak -->
+            <button id="printPage" class="btn btn-primary float-right mr-3">
+                <i class="fas fa-print"></i> Cetak Halaman
+            </button>
         </div>
 
         <div class="card-body">
@@ -88,7 +92,6 @@
                     </thead>
                     <tbody>
                         @foreach($data as $databantuan)
-                        
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             @foreach($databantuan as $dt)
@@ -128,14 +131,20 @@
 $(function() {
     $("#example1").DataTable({
         "responsive": true,
-        "scrollX": true, // Mengaktifkan pengguliran horizontal
+        "scrollX": true,
         "lengthChange": true,
-        "autoWidth": false, // Membiarkan kolom menyesuaikan lebar otomatis
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print"], // Tambahkan tombol cetak
         "columnDefs": [
-            { "width": "20%", "targets": 1 }, // Menyesuaikan lebar kolom Nama Lengkap
-            { "width": "15%", "targets": 2 }  // Menyesuaikan lebar kolom NIK
+            { "width": "20%", "targets": 1 },
+            { "width": "15%", "targets": 2 }
         ]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+});
+
+// Tombol cetak halaman penuh
+$('#printPage').on('click', function () {
+    window.print();
 });
 
 @if($message = Session::get('success'))

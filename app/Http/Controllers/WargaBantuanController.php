@@ -20,10 +20,6 @@ class WargaBantuanController extends Controller
             $dataBantuan[]=Bantuan::select('*')->where('id',$wb->bantuan_id)->get();
 
         }
-
-        
-
-
         // dd($wargabantuan,$dataBantuan);
         return view('warga.bantuan')->with([
             "title"=>"Daftar Bantuan",

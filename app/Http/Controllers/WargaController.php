@@ -35,9 +35,8 @@ class WargaController extends Controller
             "desa"=>"required",
             "kecamatan"=>"required",
             "kabupaten"=>"required"
-          
-        ]);
         
+        ]);
         Warga::create($request->all());
 
     return redirect()->route('warga.index')->with('success', 'Data Warga Berhasil Ditambahkan');
@@ -80,10 +79,8 @@ class WargaController extends Controller
         Warga::where('id',$id)->delete();
         return redirect()->route('warga.index')->with('delete','Data Warga Berhasil Dihapus');
     }
-
     public function bantuan($id)
     {
-
         $dataWarga=Warga::select('id','no_kk','nama_kepala_keluarga')
                 ->where('id',$id)
                 ->get()

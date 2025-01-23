@@ -16,12 +16,9 @@ return new class extends Migration
             $table->string('nama_kepala_keluarga');
            $table->string('no_kk');
            $table->string('alamat');
-       
             $table->string('desa');   
             $table->string('kecamatan');   
             $table->string('kabupaten');   
-          
-
             $table->timestamps();
             });
     }
@@ -30,7 +27,6 @@ return new class extends Migration
      */
     public function down(): void
         {
-           
             Schema::dropIfExists('wargas');
         }
 };
